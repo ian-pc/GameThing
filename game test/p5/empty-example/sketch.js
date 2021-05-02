@@ -200,6 +200,8 @@ function draw() {
 			fill('black');
 			text('How To Play: ', windowWidth/2, windowHeight/2 - 110)
 
+			textSize(45);
+			text('Hover mouse over \ngreen square and \n move the square to \n the yellow tile. Try to \n finish as many levels \n as possible in 1 \n minute', windowWidth/2 - 230, windowHeight/2 - 80, 470,400);
 
 		}
 
