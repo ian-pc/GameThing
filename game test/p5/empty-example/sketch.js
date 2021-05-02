@@ -30,13 +30,15 @@ let timerMs = 100;
 
 //0: dead, 1: live, 2: win, 3: start
 let gamemap = [
-[0, 0, 0, 0, 0, 0, 0], 
-[0, 0, 0, 0, 0, 0, 0], 
-[0, 0, 0, 0, 0, 0, 0], 
-[0, 0, 0, 0, 0, 0, 0], 
-[0, 0, 0, 0, 0, 0, 0], 
-[0, 0, 0, 0, 0, 0, 0], 
-[0, 0, 0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0, 0, 0, 0, 0], 
+[0, 0, 0, 0, 0, 0, 0, 0, 0], 
+[0, 0, 0, 0, 0, 0, 0, 0, 0],  
+[0, 0, 0, 0, 0, 0, 0, 0, 0],   
+[0, 0, 0, 0, 0, 0, 0, 0, 0],  
+[0, 0, 0, 0, 0, 0, 0, 0, 0],  
+[0, 0, 0, 0, 0, 0, 0, 0, 0],  
+[0, 0, 0, 0, 0, 0, 0, 0, 0],  
+[0, 0, 0, 0, 0, 0, 0, 0, 0],  ,
 ]; 
  
 let gamestart = 0;
@@ -72,7 +74,7 @@ function newmap() {
 		let genDir = random(tried);
 
 		if (genDir === 0) {
-			if(mapCurY !== gamemap[0].length - 1 && gamemap[mapCurX][mapCurY + 1] === 0) {
+			if(mapCurY !== gamemap[0].length && gamemap[mapCurX][mapCurY + 1] === 0) {
 				tried = [0, 1, 2, 3];
 				gamemap[mapCurX][mapCurY + 1] = 1;
 				mapCurY++;
@@ -104,7 +106,7 @@ function newmap() {
 				continue;
 			}
 		} else if (genDir === 3) {
-			if(mapCurX !== gamemap.length - 1 && gamemap[mapCurX - 1][mapCurY] === 0) {
+			if(mapCurX !== gamemap.length && gamemap[mapCurX - 1][mapCurY] === 0) {
 				tried = [0, 1, 2, 3];
 				gamemap[mapCurX - 1][mapCurY] = 1;
 				mapCurX--;
@@ -126,7 +128,7 @@ function newmap() {
 function timerSubtract() {
 	timerMs -= 1;
 	if (timerMs === 0) {
-		timerMs = 100;
+		timerMs = 	0;
 		timerS -= 1;
 	}
 }
